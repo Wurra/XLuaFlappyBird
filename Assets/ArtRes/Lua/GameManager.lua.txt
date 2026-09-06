@@ -1,0 +1,7 @@
+function start()
+    local btn = buttonOver:GetComponent("Button");
+    btn.onClick:RemoveAllListeners();
+    btn.onClick:AddListener(function()
+        CS.UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    end);
+end

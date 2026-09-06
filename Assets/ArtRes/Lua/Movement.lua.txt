@@ -1,0 +1,39 @@
+--移动到左边屏幕外时，把它重置回右边（背景循环）
+local speed=3;
+local startNum=6;--重生的右侧起点
+local endNum=-6;--判断出界的左侧终点
+local paramTextComp;
+local y = 0;
+local z = 0;
+local isLoopBg = false;
+
+function start()
+    if param then
+    paramTextComp = param:GetComponent("Text");
+    if paramTextComp and paramTextComp.text=="1" then
+        speed=0.03;
+        startNum=8;
+        endNum=-8;
+        isLoopBg=true;
+        --elseif必须连起来写
+    elseif paramTextComp and paramTextComp.text=="2" then
+        speed=3;
+        startNum=7.77;
+        endNum=-7.77;
+        isLoopBg=true;
+    end
+    end
+     y = self.transform.position.y;
+     z = self.transform.position.z;
+end
+--每帧把自身 X 坐标往左移：
+function update()
+    self.transform.position=CS.UnityEngine.Vector3(self.transform.position.x-speed*CS.UnityEngine.Time.deltaTime,y,z);
+    if self.transform.position.x<=endNum then
+        if isLoopBg then
+            self.transform.position=CS.UnityEngine.Vector3(startNum,y,z);
+            else
+         CS.UnityEngine.Object.Destroy(self.gameObject);
+        end
+        end
+end

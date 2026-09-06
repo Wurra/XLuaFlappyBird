@@ -185,7 +185,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 163624354}
-  - component: {fileID: 163624355}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
@@ -208,20 +207,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &163624355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 163624352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9173d38911503c4a9a371b0760bdd15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  luaScript: {fileID: 4900000, guid: aa20ac7cae87c6a41b69e1978ccbf615, type: 3}
-  injections: []
 --- !u!1 &255631726
 GameObject:
   m_ObjectHideFlags: 0
@@ -2107,7 +2092,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1136999480}
   - component: {fileID: 1136999479}
-  - component: {fileID: 1136999478}
+  - component: {fileID: 1136999481}
   m_Layer: 0
   m_Name: BackgroundFon
   m_TagString: Untagged
@@ -2115,18 +2100,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1136999478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1136999477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0032b9090ce10b44855c417fc61fca7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &1136999479
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2194,6 +2167,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1136999481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136999477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9173d38911503c4a9a371b0760bdd15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  luaScript: {fileID: 4900000, guid: 7e3ac461649bca74488d8f30c3f4d8e9, type: 3}
+  injections:
+  - name: param
+    value: {fileID: 1288334591}
 --- !u!1 &1156236710
 GameObject:
   m_ObjectHideFlags: 0
@@ -3281,7 +3270,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1948960214}
-  - component: {fileID: 1948960213}
   m_Layer: 0
   m_Name: TestDebug
   m_TagString: Untagged
@@ -3289,20 +3277,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1948960213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1948960212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9173d38911503c4a9a371b0760bdd15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  luaScript: {fileID: 4900000, guid: bebdc34d20e113a4dbade2879e29762b, type: 3}
-  injections: []
 --- !u!4 &1948960214
 Transform:
   m_ObjectHideFlags: 0
@@ -3545,7 +3519,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2044397310}
   - component: {fileID: 2044397309}
-  - component: {fileID: 2044397308}
+  - component: {fileID: 2044397311}
   m_Layer: 0
   m_Name: BackgroundFon
   m_TagString: Untagged
@@ -3553,18 +3527,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2044397308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2044397307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0032b9090ce10b44855c417fc61fca7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &2044397309
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3632,6 +3594,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2044397311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044397307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9173d38911503c4a9a371b0760bdd15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  luaScript: {fileID: 4900000, guid: 7e3ac461649bca74488d8f30c3f4d8e9, type: 3}
+  injections:
+  - name: param
+    value: {fileID: 1288334591}
 --- !u!1 &2054859892
 GameObject:
   m_ObjectHideFlags: 0

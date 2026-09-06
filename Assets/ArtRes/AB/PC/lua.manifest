@@ -1,0 +1,25 @@
+ManifestFileVersion: 0
+CRC: 146109038
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f7b30404b125ad9b3a1a6a53a8de7358
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: f7b30404b125ad9b3a1a6a53a8de7358
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/ArtRes/Lua/Movement.lua.txt
+- Assets/ArtRes/Lua/Obstacles.lua.txt
+- Assets/ArtRes/Lua/Score.lua.txt
+- Assets/ArtRes/Lua/PlayerControl.lua.txt
+- Assets/ArtRes/Lua/GameManager.lua.txt
+- Assets/ArtRes/Lua/StarOffClam.lua.txt
+Dependencies: []

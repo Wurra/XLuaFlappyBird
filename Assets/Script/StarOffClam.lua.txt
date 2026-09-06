@@ -1,4 +1,0 @@
-﻿
-function onTriggerEnter2D(collision)
-    self.gameObject:SetActive(false);
-end 

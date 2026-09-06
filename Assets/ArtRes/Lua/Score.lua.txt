@@ -1,0 +1,20 @@
+local score = 0;
+local timer = 0;
+local maxTime = 0;
+local unityTime = (_G.CS and _G.CS.UnityEngine and _G.CS.UnityEngine.Time) or nil;
+
+function start()
+    score = 0;
+    maxTime = 0.15;
+end
+
+function update()
+    timer = timer + (unityTime and unityTime.deltaTime or 0);
+    if timer >= maxTime then
+        score = score + 1;
+        timer = 0;
+        if score % 100 == 0 and unityTime then
+            unityTime.timeScale = unityTime.timeScale + 0.05;
+        end
+    end
+end

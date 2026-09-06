@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Tencent is pleased to support the open source community by making xLua available.
  * Copyright (C) 2016 THL A29 Limited, a Tencent company. All rights reserved.
  * Licensed under the MIT License (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
@@ -41,6 +41,11 @@ namespace XLuaTest
 
         void Awake()
         {
+            if (luaScript == null || string.IsNullOrEmpty(luaScript.text))
+            {
+                return;
+            }
+
             // 为每个脚本设置一个独立的脚本域，可一定程度上防止脚本间全局变量、函数冲突
             scriptScopeTable = luaEnv.NewTable();
 
@@ -53,17 +58,35 @@ namespace XLuaTest
 
             // 将所需值注入到 Lua 脚本域中
             scriptScopeTable.Set("self", this);
-            foreach (var injection in injections)
+            if (injections != null)
             {
-                scriptScopeTable.Set(injection.name, injection.value);
+                foreach (var injection in injections)
+                {
+                    if (injection != null && !string.IsNullOrEmpty(injection.name))
+                    {
+                        scriptScopeTable.Set(injection.name, injection.value);
+                    }
+                }
             }
 
             // 如果你希望在脚本内能够设置全局变量, 也可以直接将全局脚本域注入到当前脚本的脚本域中
             // 这样, 你就可以在 Lua 脚本中通过 Global.XXX 来访问全局变量
             // scriptScopeTable.Set("Global", luaEnv.Global);
 
+            string scriptText = luaScript.text;
+
+            // 优先尝试从已热更新的 AssetBundle 包中获取最新的 Lua 脚本内容
+            if (ABUpdateMgr.Instance != null)
+            {
+                TextAsset hotfixAsset = ABUpdateMgr.Instance.GetLuaTextAsset(luaScript.name);
+                if (hotfixAsset != null && !string.IsNullOrEmpty(hotfixAsset.text))
+                {
+                    scriptText = hotfixAsset.text;
+                }
+            }
+
             // 执行脚本
-            luaEnv.DoString(luaScript.text, luaScript.name, scriptScopeTable);
+            luaEnv.DoString(scriptText, luaScript.name, scriptScopeTable);
 
             // 从 Lua 脚本域中获取定义的函数
             Action luaAwake = scriptScopeTable.Get<Action>("awake");
@@ -126,7 +149,11 @@ namespace XLuaTest
                 luaOnDestroy();
             }
 
-            scriptScopeTable.Dispose();
+            if (scriptScopeTable != null)
+            {
+                scriptScopeTable.Dispose();
+                scriptScopeTable = null;
+            }
             luaOnDestroy = null;
             luaUpdate = null;
             luaStart = null;

@@ -1,0 +1,11 @@
+--运行反馈：点击鼠标，小鸟能在流动的背景中自由上下扑棱跳跃并且播放音效。
+local rb;
+local flyaudio;
+local isJumping=false;
+function start()
+    rb=self:GetComponent("Rigidbody2D");
+    flyaudio=flyAudio:GetComponent("AudioSource");
+end
+function update()
+    if CS.UnityEngine.
+end

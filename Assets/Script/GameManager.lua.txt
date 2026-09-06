@@ -1,6 +1,0 @@
-﻿
-function start()
-    buttonOver:GetComponent("Button").onClick:AddListener(function()
-        CS.UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
-    end)
-end
